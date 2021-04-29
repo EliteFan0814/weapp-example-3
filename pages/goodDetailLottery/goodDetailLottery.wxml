@@ -1,0 +1,92 @@
+<view class="container">
+  <base-header title="抽奖"></base-header>
+  <view class="swiper-wrap">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="sale-wrap">
+    <view class="slogan">
+      <view class="name-wrap flex">
+        <view class="name omit-2">{{goodInfo.productName}}</view>
+      </view>
+    </view>
+    <view class="price-wrap flex">
+      <view class="price flex">
+        <view class="red">￥{{goodInfo.productSourcePrice}}</view>
+      </view>
+      <view class="sale-num">{{goodInfo.isJoinStr}}</view>
+    </view>
+    <view class="price-fragment ">
+      <view>所需碎片：</view>
+      <view bind:tap="handleSelect" data-info="{{item}}" wx:for="{{chipList}}" wx:key="id" class="fragment-item active-item">
+        <image src="{{item.hostLogo}}" mode="widthFix" />
+        x {{item.count}}
+      </view>
+    </view>
+    <view class="promise flex">
+      <view class="left">
+        <text class="fold">开奖规则：</text>
+        <view>{{goodInfo.infoStr}}</view>
+        <view>开奖日期：{{endDate}}</view>
+        <view>中奖比率：{{goodInfo.winRate}}%</view>
+      </view>
+      <!-- <van-icon name="arrow" /> -->
+    </view>
+  </view>
+  <view class="tab-wrap">
+    <van-tabs active="{{ activeTab }}" color="#0CCD79" bind:change="handleChangeTab" z-index="{{0}}">
+      <van-tab title="商品详情" name="detail">
+        <view class="good-detail">
+          <rich-text nodes="{{goodContent}}"></rich-text>
+        </view>
+      </van-tab>
+      <van-tab title="参与记录" name="record">
+        <view class="buy-record">
+          <block wx:if="{{buyRecord.length}}">
+            <view wx:for="{{buyRecord}}" wx:key="id" class="record-item flex">
+              <image class="user-img" src="{{item.memberPhoto||'/static/img/avatar.png'}}"></image>
+              <view class="right-info">
+                <view>{{item.memberName}}</view>
+                <view>参与时间：{{item.createDate}}</view>
+              </view>
+            </view>
+          </block>
+          <base-no-list wx:else title="暂无参与记录" redirect="{{false}}"></base-no-list>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view class="operation-wrap flex">
+    <view class="operate-item">
+      <view class="btn-wrap">
+        <view bind:tap="handleClose" class="right-btn btn {{goodInfo.status == 0 ? '' : 'disabled'}}">{{goodInfo.status == 0 ? '立即抽奖' : goodInfo.statusStr}}</view>
+      </view>
+    </view>
+    <!-- 弹框抽奖 -->
+    <van-popup bind:close="handleClose" show="{{ showDialog }}" closeable position="bottom" custom-style="border-radius:30rpx 30rpx 0 0;">
+      <view class="detail-wrap">
+        <view class="spec-wrap">
+          <view class="item-wrap">
+            <view class="spec-name">抽奖所需碎片：</view>
+            <view class="spec-list flex">
+              <view bind:tap="handleSelect" data-info="{{item}}" wx:for="{{chipList}}" wx:key="id" class="spec-item active-item">
+                <image src="{{item.hostLogo}}" mode="widthFix" />
+                x {{item.count}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="btn-wrap flex-cc">
+          <view bind:tap="handleLottery" class="right-btn btn " >立即抽奖</view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</view>

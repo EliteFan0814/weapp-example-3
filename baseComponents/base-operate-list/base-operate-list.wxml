@@ -1,0 +1,12 @@
+<view class="base-operate-list">
+  <view wx:for="{{operateList}}" wx:key="index" bind:tap="handleClick" data-url="{{item.jumpUrl}}" class="operate-item">
+    <view class="left">
+      <image wx:if="{{useIcon}}" src="{{item.iconImg}}" class="icon-img"></image>
+      <text class="item-name">{{item.name}}</text>
+    </view>
+    <view class="right">
+      <text class="other-info">{{item.otherInfo||''}}</text>
+      <image src="./right.svg" class="right-img"></image>
+    </view>
+  </view>
+</view>

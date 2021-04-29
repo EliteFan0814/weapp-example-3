@@ -1,0 +1,32 @@
+<view class="base-class-list" style="height:calc(100vh - {{residueHeight}}px)">
+  <!-- 左侧分类 -->
+  <!-- <view class="aside-wrap {{hideScrollBar?'hide-scroll-bar':''}}">
+    <view bind:tap="handleClick" data-index="{{index}}" data-id="{{item.id}}" wx:for="{{classList}}" wx:key="id" class="class-item {{index === activeItemIndex?'active-item':''}}">
+      <view class="item omit-1 ">{{item.name}}</view>
+    </view>
+  </view> -->
+  <!-- 右侧内容 -->
+  <view class="content-wrap">
+    <scroll-view scroll-y="{{true}}" wx:if="{{contentList.length}}" style="height:calc(100vh - {{residueHeight}}px)" bindscrolltolower="scrollLowerGetList" class="scroll-view">
+      <view bindtap="open" data-id="{{item.settingId}}" data-url="integralGoodDetail" wx:for="{{contentList}}" wx:key="settingId" class="normal-good-item"  >
+        <view class="img-wrap">
+          <image mode="aspectFill" src="{{item.hostProductThumb}}" class="item-img"></image>
+        </view>
+        <view class="name-wrap">
+          <view class="name omit-1">{{item.productName}}</view>
+          <view class="sub-name">
+            <image class="sub-icon" src="/static/img/icon/integral.png"></image>
+            <text>{{item.intergral}}</text>
+          </view>
+          <view class="num">{{item.lastCount}}份</view>
+          <view class="price-wrap">
+            <base-btn btnName="兑换" btn-style="btn-style"></base-btn>
+            <!-- <text class="red">￥16.28</text>
+            <text class="grey">￥82.22</text> -->
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <base-no-list wx:else title="暂无商品" topDistance="100" redirect="{{false}}"></base-no-list>
+  </view>
+</view>

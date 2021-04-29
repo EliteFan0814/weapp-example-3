@@ -1,0 +1,44 @@
+/* baseComponents/base-notice-list/base-notice-list.wxss */
+.base-notice-list-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.base-notice-list-wrap .notice-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.base-notice-list-wrap .swiper-wrap {
+  padding: 0 10rpx;
+  flex-grow: 1;
+}
+
+.base-notice-list-wrap .swiper-wrap .swiper {
+  height: 36rpx;
+}
+
+.base-notice-list-wrap .swiper-wrap .swiper .notice-item {
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+
+.base-notice-list-wrap .swiper-wrap .swiper .omit-1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.base-notice-list-wrap .right {
+  color: #b0b0b0;
+  display: flex;
+  align-items: center;
+}
+
+.base-notice-list-wrap .right .more-img {
+  margin-left: 5rpx;
+  width: 18rpx;
+  height: 18rpx;
+}

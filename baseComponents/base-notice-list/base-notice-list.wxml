@@ -1,0 +1,18 @@
+<!-- baseComponents/base-notice-list/base-notice-list.wxml -->
+<view class="base-notice-list-wrap">
+  <!-- <image src="./notice.svg" class="notice-img"></image> -->
+  <image src="/static/img/icon/bell.png" class="notice-img"></image>
+  <view class="swiper-wrap">
+    <swiper class="swiper" indicator-dots="{{false}}" vertical="{{true}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{noticeList}}" wx:key="*this">
+        <swiper-item>
+          <view bind:tap="openNotice" class="notice-item omit-1" data-id="{{item.id}}" data-title="{{item.title}}">{{item.title}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view bind:tap="openNotice" data-id="all" class="right">
+    <text class="text">更多</text>
+    <image src="./more.svg" class="more-img"></image>
+  </view>
+</view>

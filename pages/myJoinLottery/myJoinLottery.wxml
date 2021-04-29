@@ -1,0 +1,50 @@
+<!-- pages/order/order.wxml -->
+<view class="container">
+  <base-header title="我参与的抽奖">
+    
+  </base-header>
+
+  <scroll-view scroll-y scroll-top="{{scrollTop}}" class="scroll" bindscrolltolower="loadMore">
+    <view class="goods-list-wrap frame" wx:if="{{list.length}}">
+      <view class="base-good-list-wrap">
+        <view wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="open" data-url="goodDetailLottery" class="good-item good-item-style">
+          <view class="top">
+            <view class="left">
+              <image src="{{item.productThumbHost}}" class="good-img"></image>
+            </view>
+            <view class="right">
+              <view class="top-info-wrap">
+                <view class="good-title">{{item.productName}}</view>
+                <view class="good-subtitle">
+                  <view wx:for="{{item.fragments}}" wx:key="id" wx:for-item="chipItem" class="chunk-wrap">
+                    <view class="chunk-item">
+                      <image src="{{chipItem.hostLogo}}" class="chunk-img"></image>
+                      <text class="number">x {{chipItem.count}}</text>
+                    </view>
+                    
+                  </view>
+                </view>
+              </view>
+
+              <view class="info">{{item.infoStr}}</view>
+
+              <view class="operate">
+                <text class="time">{{item.endDate}}开奖</text>
+                <view>
+                  {{item.statusStr}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="more-time">
+            <text>开始时间：{{item.beginDate}}</text>
+            <text>{{item.isJoinStr}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <base-no-list wx:else title="暂无订单" redirect="{{false}}" topDistance="{{150}}" />
+  </scroll-view>
+</view>

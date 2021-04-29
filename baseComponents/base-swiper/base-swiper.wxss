@@ -1,0 +1,3 @@
+.base-swiper-wrap .swiper-item .item-img {
+  width: 100%;
+}

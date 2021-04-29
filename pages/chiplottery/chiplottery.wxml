@@ -1,0 +1,48 @@
+<view class="container">
+  <base-header title="碎片抽奖" titleColor="{{titleColor}}" navOpacity="{{navOpacity}}" useHeight="{{false}}"></base-header>
+  <view class="top-wrap" style="height:{{userInfoHeight}}px">
+    <image src="/static/img/chipLottery/bg.png" style="height:{{userInfoHeight}}px"></image>
+  </view>
+  <view class="my-chip-wrap frame">
+    <my-chip rightText="抽奖订单" fragment="{{myChipList}}" bind:btnTap="open" data-url="orderListLottery"></my-chip>
+  </view>
+  <view class="goods-list-wrap frame">
+    <view class="base-good-list-wrap">
+      <view wx:for="{{lotteryList}}" wx:key="id" data-id="{{item.id}}" bindtap="openDetail" class="good-item good-item-style">
+        <view class="top">
+          <view class="left">
+            <image src="{{item.productThumbHost}}" class="good-img"></image>
+          </view>
+          <view class="right">
+            <view class="top-info-wrap">
+              <view class="good-title">{{item.productName}}</view>
+              <view class="good-subtitle">
+                <view wx:for="{{item.fragments}}" wx:key="id" wx:for-item="chipItem" class="chunk-wrap">
+                  <view class="chunk-item">
+                    <image src="{{chipItem.hostLogo}}" class="chunk-img"></image>
+                    <text class="number">x {{chipItem.count}}</text>
+                  </view>
+                  <view wx:if="{{!chipItem.isEnough}}" bind:tap="getChip" data-id="{{chipItem.id}}" class="link">
+                    获取碎片
+                  </view>
+                  <view wx:else class="link" style="opacity:0;">获取碎片</view>
+                </view>
+              </view>
+            </view>
+
+            <view class="info">{{item.infoStr}}</view>
+
+            <view class="operate">
+              <text class="time">{{item.endDate}}开奖</text>
+              <base-btn btnName="{{item.status===0?'抽奖':'已结束'}}" disabled="{{item.status===0?false:true}}"></base-btn>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{moreTime}}" class="more-time">
+          <text>开始时间：{{item.beginDate}}</text>
+          <text>{{item.isJoinStr}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,125 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/merchant/merchant",
+    "pages/cart/cart",
+    "pages/personal/personal",
+    "pages/search/search",
+    "pages/searchResult/searchResult",
+    "pages/chiplottery/chiplottery",
+    "pages/shopDetail/shopDetail",
+    "pages/integralMall/integralMall",
+    "pages/chipExchange/chipExchange",
+    "pages/goodDetail/goodDetail",
+    "pages/goodDetailLottery/goodDetailLottery",
+    "pages/addressList/addressList",
+    "pages/addressEdit/addressEdit",
+    "pages/shopCollect/shopCollect",
+    "pages/orderList/orderList",
+    "pages/confirmOrder/confirmOrder",
+    "pages/noticeList/noticeList",
+    "pages/notice/notice",
+    "pages/orderDetail/orderDetail",
+    "pages/orderListIntegral/orderListIntegral",
+    "pages/orderListChip/orderListChip",
+    "pages/myFragment/myFragment",
+    "pages/fragmentBill/fragmentBill",
+    "pages/shopClass/shopClass",
+    "pages/integralBill/integralBill",
+    "pages/orderListLottery/orderListLottery",
+    "pages/integralGoodDetail/integralGoodDetail",
+    "pages/chipGoodDetail/chipGoodDetail",
+    "pages/integralOrderDetail/integralOrderDetail",
+    "pages/orderListFragment/orderListFragment",
+    "pages/fragmentExchange/fragmentExchange",
+    "pages/fragmentExchangeDetails/fragmentExchangeDetails",
+    "pages/fragmentExchangeConfirm/fragmentExchangeConfirm",
+    "pages/lotteryOrderDetail/lotteryOrderDetail",
+    "pages/confirmOrderChip/confirmOrderChip",
+    "pages/fragmentOrderDetail/fragmentOrderDetail",
+    "pages/myJoinLottery/myJoinLottery"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位地址"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#BBBBBB",
+    "selectedColor": "#07c160",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/img/index.png",
+        "selectedIconPath": "static/img/indexActive.png"
+      },
+      {
+        "pagePath": "pages/merchant/merchant",
+        "text": "商家",
+        "iconPath": "static/img/merchant.png",
+        "selectedIconPath": "static/img/merchantActive.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/img/cart.png",
+        "selectedIconPath": "static/img/cartActive.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "static/img/personal.png",
+        "selectedIconPath": "static/img/personalActive.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "base-header": "baseComponents/base-header/base-header",
+    "base-search": "baseComponents/base-search/base-search",
+    "base-btn": "baseComponents/base-btn/base-btn",
+    "base-no-list": "baseComponents/base-no-list/base-no-list",
+    "base-pre-img": "baseComponents/base-pre-img/base-pre-img",
+    "base-swiper": "baseComponents/base-swiper/base-swiper",
+    "base-class-swiper": "baseComponents/base-class-swiper/base-class-swiper",
+    "base-notice-list": "baseComponents/base-notice-list/base-notice-list",
+    "base-good-list": "baseComponents/base-good-list/base-good-list",
+    "base-personal-info": "baseComponents/base-personal-info/base-personal-info",
+    "base-order-btns": "baseComponents/base-order-btns/base-order-btns",
+    "base-operate-list": "baseComponents/base-operate-list/base-operate-list",
+    "base-btn-list": "baseComponents/base-btn-list/base-btn-list",
+    "my-chip": "localComponents/my-chip/my-chip",
+    "my-lottery-list": "localComponents/my-lottery-list/my-lottery-list",
+    "integral-class-list": "localComponents/integral-class-list/integral-class-list",
+    "integral-hotclass-list": "localComponents/integral-hotclass-list/integral-hotclass-list",
+    "shopDetail-class-list": "localComponents/shopDetail-class-list/shopDetail-class-list",
+    "shopDetail-cheap-list": "localComponents/shopDetail-cheap-list/shopDetail-cheap-list",
+    "mall-class-list": "localComponents/mall-class-list/mall-class-list",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tree-select": "@vant/weapp/tree-select/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-radio": "@vant/weapp/radio",
+    "van-radio-group": "@vant/weapp/radio-group",
+    "van-field": "@vant/weapp/field/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

@@ -1,0 +1,44 @@
+<!--pages/myFragment/myFragment.wxml-->
+<view class="container">
+  <view class="header">
+    <base-header  ase-header title="我的碎片" titleColor="#fff" navOpacity="{{navOpacity}}" useHeight="{{false}}"></base-header>
+    <image src="/static/img/personal/myFragment-bg.png" style="height:{{userInfoHeight}}px" class="bg-img"></image>
+
+    <view class="info flex">
+      <view class="left" bindtap="open" data-url="fragmentBill" data-id="">
+        <view class="text">碎片总数</view>
+        <view class="num">{{total}}</view>
+        <view class="remark" >点击查看流水</view>
+      </view>
+      
+      <view class="right">
+        <view class="chunk flex" wx:for="{{myFragment}}" wx:key="id">
+          <view class="chunk-item flex">
+            <image src="{{item.hostLogo}}" class="chunk-img"></image>
+          </view>
+          <text class="middle">x</text>
+          <view class="chunk-item flex">
+            <view class="num">{{item.count}}</view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  
+
+  <view class="list flex">
+    <view class="list-item flex" wx:for="{{list}}" wx:key="id">
+      <view class="left flex" bindtap="open" data-url="fragmentBill" data-id="{{item.id}}">
+        <image src="{{item.hostLogo}}" class="img" mode="widthFix"></image>
+        <text class="middle">x</text>
+        <view class="num">{{item.count}}</view>
+      </view>
+
+      <view class="right">
+        <view bindtap="open" data-id="{{item.id}}" data-img="{{item.hostLogo}}" data-url="searchResult">获取</view>
+        <view bindtap="open" data-url="fragmentExchange" data-id="{{item.id}}">兑换</view>
+      </view>
+    </view>
+  </view>
+</view>

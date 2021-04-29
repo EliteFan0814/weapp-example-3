@@ -1,0 +1,74 @@
+<view class="container">
+  <base-header title="订单">
+    <view class="tabs-wrap">
+      <van-tabs wx:if="{{isGetTabs}}" active="{{ status }}" sticky bind:click="onChange">
+        <van-tab wx:for="{{tabList}}" wx:key="*this" title="{{item.name}}" name="{{item.value}}"></van-tab>
+      </van-tabs>
+    </view>
+  </base-header>
+  <view class="order-list-wrap">
+    <scroll-view scroll-y scroll-top="{{scrollTop}}" class="scroll" bindscrolltolower="loadMore">
+      <view class="order-list" wx:if="{{list.length}}">
+        <view class="order-item" wx:for="{{list}}" wx:key="orderId" bindtap="open" data-id="{{item.orderId}}">
+          <view class="title flex">
+            <text>订单号：{{item.orderId}}</text>
+            <text class="red {{(item.status && item.status != -1) ? 'success' : ''}}">{{item.statusStr}}</text>
+          </view>
+          <view class="info">
+            <view class="goods-list">
+              <view class="goods-item flex" wx:for="{{item.isOpen ? item.orderDetails : item.firstChild}}" wx:key="index" wx:for-item="child" data-id="{{item.id}}">
+                <image src="{{child.productThumbHost}}" class="good-img"></image>
+                <view class="right-info flex-dc">
+                  <view class="name omit-1">{{child.productName}}</view>
+                  <view class="spec">规格：{{child.productSkuName}}</view>
+                  <view class="price flex">
+                    <text>￥{{child.prePrice}}</text>
+                    <text class="number">x {{child.count}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="more-btn flex" catch:tap="openClick" data-index="{{index}}" data-item="{{item}}">
+              <text>共{{item.orderDetails.length}}件商品</text>
+              <view wx:if="{{item.orderDetails.length>1}}">
+                <image src="../../static/img/order/down.png" wx:if="{{!item.isOpen}}" mode="widthFix" class="icon" />
+                <image src="../../static/img/order/up.png" wx:else mode="widthFix" class="icon" />
+              </view>
+            </view>
+            <view class="total flex">
+              <text class="left">{{item.shopName}}</text>
+              <text class="right">
+                <text class="word">合计：</text>
+                <text>￥{{item.totalMoney}}</text>
+              </text>
+            </view>
+            <view class="refund" wx:if="{{item.refundStatus >= 10}}">{{item.refundStatusStr}}</view>
+          </view>
+          <view class="operation flex">
+            <base-btn btn-name="联系商家" btn-style="base-style" catch:tap="makePhone" data-phone="{{item.shopPhone}}"></base-btn>
+            <base-btn btn-name="立即付款" btn-style="base-style" wx:if="{{item.isPay == false && item.status != 50 && item.status != -1}}" catch:tap="pay" data-id="{{item.orderId}}" data-index="{{index}}"></base-btn>
+            <base-btn btn-name="申请退款" btn-style="base-style" wx:if="{{item.isPay && !item.refundStatus && (item.status == 10 || item.status == 20)}}" catch:tap="refund" data-id="{{item.orderId}}"></base-btn>
+            <base-btn btn-name="确认收货" btn-style="base-style" wx:if="{{item.status == 20}}" catch:tap="confirm" data-id="{{item.orderId}}"></base-btn>
+            <base-btn btn-name="取消订单" btn-style="base-style" wx:if="{{item.payStatus == false && item.status != 50 && item.status != -1}}" catch:tap="cancelOrder" data-id="{{item.orderId}}"></base-btn>
+          </view>
+        </view>
+      </view>
+      <base-no-list wx:else title="暂无订单" redirect="{{false}}" topDistance="{{100}}"></base-no-list>
+    </scroll-view>
+  </view>
+  <van-popup show="{{refundDialog}}" round bind:close="refundCancel">
+    <view class="refundDialog">
+      <view class="title">申请退款</view>
+      <!-- ><van-radio-group value="{{reason}}">
+        <view class="list-item flex" wx:for="{{reasonList}}" wx:key="id" bind:tap="refundChange" data-id="{{item.id}}">
+          <view class="left">
+            {{item.name}}
+          </view>
+          <van-radio name="{{item.id}}" class="right" checked-color="#f84211"></van-radio>
+        </view>
+      </van-radio-group>< -->
+      <van-field value="{{ remark }}" type="textarea" label="退款原因：" border="{{ false }}" bind:change="inputChange" data-name="remark" />
+      <view class="btn" bindtap="submit" data-item="{{item}}">提交</view>
+    </view>
+  </van-popup>
+</view>

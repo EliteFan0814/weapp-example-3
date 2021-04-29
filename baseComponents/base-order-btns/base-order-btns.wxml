@@ -1,0 +1,10 @@
+<view class="base-order-btns">
+  <view wx:for="{{orderBtnList}}" wx:key="name" data-status="{{item.status}}"
+    bind:tap="handleClick" class="btn-item">
+    <image src="{{item.img}}" class="item-img"></image>
+    <text class="item-name">{{item.name}}</text>
+  </view>
+  <view bind:tap="openOrder" class="last-btn">
+    <view class="all">全部订单</view>
+  </view>
+</view>

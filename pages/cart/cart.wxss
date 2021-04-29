@@ -1,0 +1,110 @@
+.container {
+  background-color: #f5f5f5;
+}
+
+.container .timer .end-text {
+  margin-right: 10rpx;
+}
+
+.container .timer .item-wrap {
+  color: #999999;
+}
+
+.container .timer .item-wrap .item {
+  display: inline-block;
+  width: 30rpx;
+  margin: 0rpx 5rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  background-color: #999999;
+  border-radius: 4rpx;
+}
+
+.container .cart-wrap {
+  padding-bottom: 115rpx;
+}
+
+.container .cart-wrap .cart-list .more-info {
+  color: #999999;
+  justify-content: space-between;
+  padding: 10rpx 0;
+  margin-bottom: 10rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.container .cart-wrap .cart-list .check-item {
+  background-color: #fff;
+  padding: 20rpx 15rpx;
+  margin: 15rpx 0;
+  border-radius: 15rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item {
+  margin-left: 15rpx;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .good-img {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right {
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-left: 15rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right .name-wrap {
+  justify-content: space-between;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right .name-wrap .name {
+  flex-grow: 1;
+  font-weight: bolder;
+  width: 300rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right .name-wrap .delete {
+  margin-left: 15rpx;
+  align-self: flex-start;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right .spec {
+  color: #999999;
+  width: 300rpx;
+}
+
+.container .cart-wrap .cart-list .check-item .cart-item .right .price {
+  justify-content: space-between;
+}
+
+.container .cart-wrap .cart-list van-checkbox-group .shop-good-item {
+  margin-bottom: 20rpx;
+}
+
+.container .operation {
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.container .operation .right .all {
+  margin-right: 20rpx;
+}
+
+.container .operation .right .all .grey {
+  margin-right: 10rpx;
+  text-decoration: none;
+}

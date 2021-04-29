@@ -1,0 +1,19 @@
+<view class="my-chip">
+  <view class="top">
+    <text class="title">我的碎片</text>
+    <view bind:tap="handleClick" class="income">
+      <text>{{rightText}}</text>
+      <van-icon wx:if="{{rightText}}" name="arrow" color="#a3bab0" />
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="good-subtitle">
+      <view class="chunk-wrap" bind:tap="handleClick">
+        <view class="chunk-item" wx:for="{{fragment}}" wx:key="id">
+          <image src="{{item.hostLogo}}" class="chunk-img"></image>
+          <text class="number">x {{item.count}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

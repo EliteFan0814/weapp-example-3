@@ -1,0 +1,9 @@
+<view class="container">
+  <base-header title="碎片兑换"></base-header>
+  <view class="chip-wrap frame">
+    <my-chip rightText="查看流水" bind:btnTap="open" data-url="fragmentBill"></my-chip>
+  </view>
+  <view class="goods-list-wrap frame">
+    <base-good-list lotteryTime="{{false}}" good-item-style="good-item-style"></base-good-list>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<view class="base-btn-list">
+  <view wx:for="{{btnList}}" wx:key="index" bind:tap="handleClick" data-index="{{index}}" data-val="{{item.value}}" class="btn-item {{activeIndex === index?'active-item':''}}">
+      {{item.name}}
+    </view>
+</view>

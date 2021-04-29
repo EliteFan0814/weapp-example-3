@@ -1,0 +1,91 @@
+<view class="container">
+  <base-header title="订单详情"></base-header>
+
+  <view class="status flex">
+    <view class="left">订单状态</view>
+    <view class="right">{{info.statusStr}}</view>
+  </view>
+
+  <view class="address flex">
+    <image src="../../static/img/order/adr.png" class="add" mode="widthFix" />
+    <view wx:if="{{!info.selfPickUp}}">
+      <view class="name flex">
+        <view>收货人：{{info.contact}}</view>
+        <view class="phone">{{info.phone}}</view>
+      </view>
+      <view class="address-text">收货地址：{{info.address}}</view>
+    </view>
+    <view wx:else bind:tap="showAddress" data-info="{{selfGetInfo}}">
+      <view class="name flex">
+        <view>提货人：{{info.contact}} {{info.phone}}</view>
+      </view>
+      <view class="phone">自提点电话：{{selfGetInfo.pickUpPhone}}</view>
+      <view class="address-text">自提点地址：{{selfGetInfo.pickUpAddress}}</view>
+    </view>
+    <van-icon wx:if="{{info.selfPickUp}}" bind:tap="showAddress" data-info="{{selfGetInfo}}" class="right-icon" color="#999999" name="arrow" />
+  </view>
+  <view class="order-item">
+    <view class="title flex">
+      <text>订单号：{{info.orderId}}</text>
+    </view>
+
+    <view class="info">
+      <view class="goods-list">
+        <view class="goods-item flex" wx:for="{{info.orderDetails}}" wx:key="index" wx:for-item="child" data-id="{{item.id}}">
+          <image src="{{child.productThumbHost}}" class="good-img"></image>
+          <view class="right-info flex-dc">
+            <view class="name omit-1">{{child.productName}}</view>
+            <view class="spec">规格：{{child.productSkuName}}</view>
+            <view class="price flex">
+              <text>￥{{child.prePrice}}</text>
+              <text class="number">x {{child.count}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="total flex">
+        <text  class="left">{{info.shopName}}</text>
+        <text class="right">
+          <text class="word">合计：</text>
+          <text>￥{{info.totalMoney}}</text>
+        </text>
+      </view>
+      <view class="refund" wx:if="{{info.refundStatus >= 10}}">{{info.refundStatusStr}}</view>
+    </view>
+    <view class="operation flex">
+      <base-btn btn-name="联系平台" btn-style=" base-style" bindtap="makePhone"></base-btn>
+      <base-btn btn-name="立即付款" btn-style="red base-style" wx:if="{{info.payStatus == false && info.orderStatus != 50 && info.orderStatus != -1}}" bindtap="pay" data-id="{{info.id}}" isPushing="{{isPushing}}"></base-btn>
+            <base-btn btn-name="申请退款" btn-style="base-style" wx:if="{{info.isPay && !info.refundStatus && (info.status == 10 || info.status == 20)}}" catch:tap="refund" data-id="{{item.orderId}}"></base-btn>
+      <base-btn btn-name="确认收货" btn-style="red base-style" wx:if="{{info.orderStatus == 20}}" bindtap="confirm" data-id="{{info.id}}"></base-btn>
+      <base-btn btn-name="取消订单" btn-style=" base-style" wx:if="{{info.payStatus == false && info.orderStatus != 50 && info.orderStatus != -1}}" bindtap="cancelOrder" data-id="{{info.id}}"></base-btn>
+    </view>
+  </view>
+
+  <view class="info" wx:if="{{info.status >= 20}}">
+    <view class="title">订单信息</view>
+    <view class="field flex">
+      <view class="label">快递公司：</view>
+      <view class="val">{{info.expressName}}</view>
+    </view>
+    <view class="field flex">
+      <view class="label">物流单号：</view>
+      <view class="val">{{info.expressNum}}</view>
+    </view>
+    <view class="field flex">
+      <view class="label">下单时间：</view>
+      <view class="val">{{info.createDate}}</view>
+    </view>
+  </view>
+
+
+  <van-popup show="{{refundDialog}}" round bind:close="refundCancel" >
+    <view class="refundDialog">
+      <view class="title">申请退款</view>
+
+      <van-field value="{{ remark }}"type="textarea" label="退款原因：" border="{{ false }}" bind:change="inputChange" data-name="remark"/>
+
+      <view class="btn"  bindtap="submit" data-item="{{item}}">提交</view>
+
+    </view> 
+  </van-popup>
+</view>

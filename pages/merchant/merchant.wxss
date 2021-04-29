@@ -1,0 +1,77 @@
+.container {
+  background-color: #f5f5f5;
+  padding-bottom: 20rpx;
+}
+
+.container .merchant-list-wrap {
+  margin-top: 20rpx;
+}
+
+.container .merchant-list-wrap .merchant-item {
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+  box-shadow: 0rpx 5rpx 45rpx 0rpx rgba(0, 0, 0, 0.05);
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.container .merchant-list-wrap .merchant-item .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.container .merchant-list-wrap .merchant-item .top .left-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.container .merchant-list-wrap .merchant-item .top .left-wrap .logo {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.container .merchant-list-wrap .merchant-item .top .left-wrap .top-name-wrap .name {
+  font-size: 30rpx;
+  line-height: 40rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+}
+
+.container .merchant-list-wrap .merchant-item .top .left-wrap .top-name-wrap .distance {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  letter-spacing: 0rpx;
+  color: #bbbbbb;
+}
+
+.container .merchant-list-wrap .merchant-item .top .collect {
+  width: 32rpx;
+  height: 29rpx;
+}
+
+.container .merchant-list-wrap .merchant-item .middle {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+}
+
+.container .merchant-list-wrap .merchant-item .middle .slogan {
+  color: #333333;
+}
+
+.container .merchant-list-wrap .merchant-item .middle .comein {
+  color: #0ccd79;
+}
+
+.container .merchant-list-wrap .merchant-item .bottom {
+  justify-content: space-between;
+}
+
+.container .merchant-list-wrap .merchant-item .bottom .active-img {
+  width: 120rpx;
+  height: 120rpx;
+}

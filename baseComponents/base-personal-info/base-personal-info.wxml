@@ -1,0 +1,31 @@
+<view class="base-personal-info">
+  <view class="left-wrap">
+    <view class="avatar-wrap">
+      <image src="{{isBindWx?userInfo.wxHeader:'/static/img/logo.png'}}" class="avatar"></image>
+      <view wx:if="{{isBindWx&&!isBindWxPhone}}" class="bind">
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="bind-phone-btn">绑定手机</button>
+      </view>
+      <!-- <image src="https://dummyimage.com/107x107/000/fff" class="avatar"></image> -->
+    </view>
+    <view class="content-wrap">
+      <block wx:if="{{isBindWx}}">
+        <view class="header flex">
+          <view class="name">{{userInfo.wxName}}</view>
+          <view bindtap="open" data-url="integralBill" class="integral">积分：{{userInfo.accountInfo.intergral}}</view>
+        </view>
+        <view class="mobile">{{userInfo.mobile}}</view>
+      </block>
+      <block wx:else>
+        <view class="no-bind">
+          <button class="bind-btn" type="default" size="mini" open-type="getUserInfo" bindgetuserinfo="getWxUserInfoByPage">
+            授权头像昵称
+          </button>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view wx:if="{{useSetting}}" bind:tap="handleSetting" class="right-wrap">
+    <image src="./setting.svg" class="setting"></image>
+  </view>
+  <view wx:else></view>
+</view>

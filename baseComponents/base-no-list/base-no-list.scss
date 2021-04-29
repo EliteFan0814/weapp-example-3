@@ -1,0 +1,23 @@
+.base-no-list-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20rpx;
+  .no-list-img {
+    margin-bottom: 10rpx;
+  }
+  .info-wrap {
+    color: #999999;
+    margin-bottom: 30rpx;
+    .info {
+      line-height: 48rpx;
+      letter-spacing: 0rpx;
+    }
+  }
+  .more-btn {
+    color: #accbfa;
+    border: 1px solid #accbfa;
+    border-radius: 10rpx;
+    padding: 5rpx 10rpx;
+  }
+}

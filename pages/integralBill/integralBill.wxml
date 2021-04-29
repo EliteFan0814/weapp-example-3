@@ -1,0 +1,14 @@
+<!--pages/allProfit/allProfit.wxml-->
+<view class="container">
+  <view class="list" wx:if="{{list.length}}">
+    <view class="list-item flex" wx:for="{{list}}" wx:key="index">
+      <view>
+        <view class="label">{{item.remark}}</view>
+        <view class="time">{{item.createDate}}</view>
+      </view>
+      <view class="money {{item.isIncome?'danger':'success'}}">{{item.isIncome?'+':'-'}}{{item.intergral}}</view>
+    </view>
+  </view>
+
+  <base-no-list wx:else title="暂无积分账单" topDistance="100" redirect="{{false}}"></base-no-list>
+</view>

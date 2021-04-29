@@ -1,0 +1,87 @@
+.base-personal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.base-personal-info .left-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.base-personal-info .left-wrap .avatar-wrap {
+  position: relative;
+  margin-right: 20rpx;
+  width: 107rpx;
+  height: 107rpx;
+}
+
+.base-personal-info .left-wrap .avatar-wrap .avatar {
+  box-sizing: border-box;
+  width: 107rpx;
+  height: 107rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: block;
+}
+
+.base-personal-info .left-wrap .bind {
+  width: 100%;
+  height: 54rpx;
+  background-color: rgba(165, 165, 165, 0.6);
+  border-radius: 0 0 54rpx 54rpx;
+  overflow: hidden;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 22rpx;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50rpx;
+}
+
+.base-personal-info .left-wrap .bind .bind-phone-btn {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105rpx;
+  height: 54rpx;
+  font-size: 20rpx;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+}
+
+.base-personal-info .left-wrap .content-wrap {
+  color: #ffffff;
+}
+
+.base-personal-info .left-wrap .content-wrap .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.base-personal-info .left-wrap .content-wrap .name {
+  font-size: 32rpx;
+  letter-spacing: 1.4rpx;
+  margin-bottom: 15rpx;
+}
+
+.base-personal-info .left-wrap .content-wrap .integral {
+  font-size: 20rpx;
+  font-weight: bold;
+  letter-spacing: 0rpx;
+  background-color: #268c60;
+  border-radius: 20rpx;
+  padding: 5rpx 15rpx;
+  margin-left: 20rpx;
+}
+
+.base-personal-info .right-wrap .setting {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}

@@ -1,0 +1,55 @@
+<view class="container">
+  <base-header title="订单详情"></base-header>
+  <view class="address flex">
+    <image src="../../static/img/order/adr.png" class="add" mode="widthFix" />
+    <view >
+      <view class="name flex">
+        <view>收货人：{{info.contact}}</view>
+        <view class="phone">{{info.phone}}</view>
+      </view>
+      <view class="address-text">收货地址：{{info.address}}</view>
+    </view>
+    
+    <!--><van-icon  bind:tap="showAddress" data-info="{{selfGetInfo}}" class="right-icon" color="#999999" name="arrow" /><-->
+  </view>
+
+  <view class="order-item">
+    <view class="title flex">
+      <text user-select>订单号：{{info.orderId}}</text>
+      <text class="red">{{info.orderStatusStr}}</text>
+    </view>
+    <view class="info">
+      <view class="goods-list">
+        <view class="goods-item flex" >
+          <image src="{{info.hostProductThumb}}" class="good-img"></image>
+          <view class="right-info flex-dc">
+            <view class="name omit-2">{{info.productName}}</view>
+            <!--><view class="spec">规格：{{info.skuName}}</view><-->
+            <view class="price flex">
+              <view >
+                ￥{{info.productSourcePrice}}
+              </view>
+              <text class="number">x {{info.count}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!--><view class="total flex">
+        <text class="remark">合计消耗碎片：</text>
+        <view class="chunk-wrap" wx:for="{{info.fragments}}" wx:key="id">
+          <view class="chunk-item">
+            <image src="{{item.hostLogo}}" class="chunk-img"></image>
+            <text class="number">x {{item.count}}</text>
+          </view>
+        </view>
+      </view><-->
+
+      <view class="btn-wrap flex" wx:if="{{info.status == 10}}">
+        <base-btn btn-name="确认收货" btn-style="base-style"  catch:tap="confirm" data-id="{{info.id}}" isPushing="{{isPushing}}"></base-btn>
+      </view>
+    </view>
+    
+  </view>
+  
+</view>

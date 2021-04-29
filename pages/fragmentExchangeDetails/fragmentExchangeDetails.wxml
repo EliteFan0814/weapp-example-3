@@ -1,0 +1,92 @@
+<view class="container">
+  <base-header title="兑换"></base-header>
+  <view class="swiper-wrap">
+    <swiper
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+    >
+      <block wx:for="{{swiperList}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="sale-wrap">
+    <view class="slogan">
+      <view class="name-wrap flex">
+        <view class="name omit-2">{{goodInfo.productName}}</view>
+      </view>
+    </view>
+    <view class="price-wrap flex">
+      <view class="price flex">
+        <view class="red">￥{{goodInfo.productSourcePrice}}</view>
+      </view>
+      <view class="sale-num">兑换数量：{{goodInfo.exchangeCount}}</view>
+    </view>
+    <view class="price-fragment">
+      <view>所需碎片：</view>
+      <view
+        bind:tap="handleSelect"
+        data-info="{{item}}"
+        wx:for="{{chipList}}"
+        wx:key="id"
+        class="fragment-item active-item"
+      >
+        <image src="{{item.hostLogo}}" mode="widthFix" /> x {{item.count}}
+      </view>
+    </view>
+    <view class="promise flex">
+      <view class="left">
+        <text class="fold">服务</text>
+        <text>品质承诺，极速物流</text>
+      </view>
+      <!-- <van-icon name="arrow" /> -->
+    </view>
+  </view>
+  <view class="good-detail">
+    <rich-text nodes="{{goodContent}}"></rich-text>
+  </view>
+  <view class="operation-wrap flex">
+    <view class="operate-item">
+      <view class="btn-wrap">
+        <view bind:tap="handleClose" class="right-btn btn">立即兑换</view>
+      </view>
+    </view>
+    <!-- 弹框兑换 -->
+    <van-popup
+      bind:close="handleClose"
+      show="{{ showDialog }}"
+      closeable
+      position="bottom"
+      custom-style="border-radius:30rpx 30rpx 0 0;"
+    >
+      <view class="detail-wrap">
+        <view class="spec-wrap">
+          <view class="item-wrap">
+            <view class="spec-name">兑换所需碎片：</view>
+            <view class="spec-list flex">
+              <view
+                bind:tap="handleSelect"
+                data-info="{{item}}"
+                wx:for="{{chipList}}"
+                wx:key="id"
+                class="spec-item active-item"
+              >
+                <image src="{{item.hostLogo}}" mode="widthFix" /> x {{item.count}}
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="btn-wrap flex-cc">
+          <view bind:tap="handleLottery" class="right-btn btn">立即兑换</view>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</view>

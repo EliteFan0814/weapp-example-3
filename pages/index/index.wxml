@@ -1,0 +1,81 @@
+<!-- index.wxml -->
+<view class="container">
+  <base-header title="大奔农庄" useHeight="{{false}}" titleColor="{{titleColor}}" navOpacity="{{navOpacity}}" showLeft="{{false}}"></base-header>
+  <view class="top-search-wrap">
+    <image src="/static/img/index/bg.png" class="top-bg" style="height:{{100 + capsuleToTop}}px"></image>
+    <view class="search-wrap">
+      <base-search showImg="{{false}}" bind:handleTap="openSearch"></base-search>
+    </view>
+  </view>
+  <!-- 分类轮播 -->
+  <view class="class-wrap">
+    <base-class-swiper classArr="{{classArr}}" pageNum="{{8}}" pageRows="{{2}}"></base-class-swiper>
+  </view>
+  <view class="notice-wrap frame">
+    <base-notice-list noticeList="{{noticeList}}"></base-notice-list>
+  </view>
+  <!-- 抽奖专区 -->
+  <view class="lottery-wrap">
+    <view class="title-wrap flex title-more">
+      <view class="left"></view>
+      <view class="center">
+        <view class="lottery-title">抽奖专区</view>
+      </view>
+      <view bind:tap="openMoreLottery" class="right">
+        <text>更多</text>
+        <image src="/static/img/icon/more.svg" class="more-img"></image>
+      </view>
+    </view>
+    <view class="content-wrap">
+      <view class="good-list-wrap">
+        <my-lottery-list refresh="{{refresh}}"></my-lottery-list>
+      </view>
+    </view>
+  </view>
+  <!-- 商品专区 -->
+  <view class="normal-goods-wrap">
+    <view class="title-wrap">
+      <view class="normal-title">
+        <text class="title-text">商品专区</text>
+      </view>
+      <view class="normal-goods-list">
+        <view wx:for="{{goodsList}}" wx:key="id" bind:tap="openGoodDetail" data-id="{{item.id}}" class="normal-good-item">
+          <view class="img-wrap">
+            <image mode="aspectFill" src="{{item.thumbHost}}"></image>
+          </view>
+          <view class="name-wrap">
+            <view class="name inner-omit-1">{{item.name}}</view>
+            <view class="sub-name">
+              <text>购买可获取</text>
+              <image class="sub-icon" src="{{item.fragmentInfos[0].hostLogo}}"></image>
+              <text>x {{item.fragmentInfos[0].count}} ...</text>
+              <!-- <view wx:for="{{item.fragmentInfos}}" wx:for-item="innerItem" wx:key="id" class="chip-wrap">
+                <image class="sub-icon" src="{{innerItem.hostLogo}}"></image>
+                <text>x {{innerItem.count}}</text>
+              </view> -->
+            </view>
+            <view class="sub-name">
+              <text>赠送积分：</text>
+              <text>{{item.integral}}</text>
+            </view>
+            <view class="shop-name">{{item.shopName}}</view>
+            <view class="price-wrap">
+              <text class="red">￥{{item.specialPrice}}</text>
+              <text class="grey">￥{{item.sourcePrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>

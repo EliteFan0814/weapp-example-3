@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="other-wrap">
+    <base-header title="商城分类">
+      <view class="search-wrap">
+        <van-search class="search" use-action-slot value="{{searchKey}}" shape="round" bind:search="searchNewGood" bind:change="changeKeywords" bind:clear="clearKeywords" show-action placeholder="请输入搜索关键词">
+          <view slot="action" catch:tap="searchNewGood">搜索</view>
+        </van-search>
+      </view>
+    </base-header>
+  </view>
+  <view class="class-list-wrap" style="height:calc(100vh - {{headerHeight}}px);">
+    <view class="aside-wrap {{hideScrollBar?'hide-scroll-bar':''}}" style="height:calc(100vh - {{headerHeight}}px);">
+      <view bind:tap="handleClick" data-index="{{index}}" data-id="{{item.id}}" wx:for="{{classList}}" wx:key="id" class="class-item {{index === activeItemIndex?'active-item':''}}">
+        <view class="item omit-1 ">{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 右侧内容 -->
+    <view class="content-wrap">
+      <scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{headerHeight}}px)" bindscrolltolower="scrollLowerGetList" class="scroll-view">
+        <block wx:if="{{classGoodList.length}}">
+          <view bind:tap="openDetail" data-id="{{item.id}}" wx:for="{{classGoodList}}" wx:key="id" class="normal-good-item">
+            <view class="img-wrap">
+              <!-- <image mode="aspectFill" src="https://dummyimage.com/258x220/000/fff" class="item-img"></image> -->
+              <image mode="aspectFill" src="{{item.thumbHost}}" class="item-img"></image>
+            </view>
+            <view class="name-wrap">
+              <view class="name omit-1">{{item.name}}</view>
+              <view class="sub-name">
+                <text>购买可获取</text>
+                <image class="sub-icon" src="{{item.fragmentInfos[0].hostLogo}}"></image>
+                <text>x {{item.fragmentInfos[0].count}} ...</text>
+              </view>
+              <view class="num">50份</view>
+              <view class="price-wrap flex">
+                <text class="red">￥{{item.sourcePrice}}</text>
+                <text class="grey">￥82.22</text>
+                <!-- <base-btn btnName="兑换" btn-style="btn-style"></base-btn> -->
+              </view>
+            </view>
+          </view>
+        </block>
+        <base-no-list wx:else title="暂无商品" redirect="{{false}}"></base-no-list>
+      </scroll-view>
+    </view>
+  </view>
+</view>

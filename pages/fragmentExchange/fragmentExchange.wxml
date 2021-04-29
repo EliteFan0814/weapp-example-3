@@ -1,0 +1,60 @@
+<view class="container">
+  <base-header title="碎片兑换" class="header-wrap">
+    <view class="search-wrap flex">
+      <view class="vansearch-wrap">
+        <van-search class="search" use-action-slot value="{{keywords}}" shape="round" bind:change="changeKeywords" bind:search="searchNewGood" show-action bind:clear="clearKeywords" placeholder="请输入搜索关键词">
+          <view slot="action" catch:tap="searchNewGood">搜索</view>
+        </van-search>
+      </view>
+      <view class="select-wrap">
+        <view class="select">
+          <view bind:tap="handleShow" class="show-wrap">
+            <image wx:if="{{selectId!=='all'}}" src="{{selectImg}}" class="item-img"></image>
+            <text wx:else>全部</text>
+            <image src="/static/img/icon/down.svg" class="down"></image>
+          </view>
+          <view wx:if="{{downHeight}}" class="down-wrap hide-scroll-bar" style="height:{{downHeight}}rpx;">
+            <view bind:tap="handleSelect" data-info="{{item}}" wx:for="{{downList}}" wx:key="values" class="down-item">
+              <image wx:if="{{item.id !== 'all'}}" src="{{item.hostLogo}}" class="item-img"></image>
+              <text wx:else class="item-name">{{item.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="my-chip-wrap frame">
+      <my-chip rightText="兑换订单" fragment="{{myChipList}}" bind:btnTap="open" data-url="orderListFragment"></my-chip>
+    </view>
+  </base-header>
+  <view class="result-wrap" style="padding-top:{{headerWrapHeight}}rpx">
+    <view class="goods-list-wrap frame">
+      <view wx:if="{{resultList.length}}" class="base-good-list-wrap">
+        <view bind:tap="openDetail" data-id="{{item.settingId}}" wx:for="{{resultList}}" wx:key="settingId" class="normal-good-item">
+          <view class="img-wrap">
+            <image mode="aspectFill" src="{{item.hostProductThumb}}" class="item-img"></image>
+          </view>
+          <view class="name-wrap">
+            <view class="name omit-2">{{item.productName}}</view>
+            <view class="sub-name">
+              <text>兑换所需碎片</text>
+              <!-- <view wx:for="{{item.fragments}}" wx:key="id" wx:for-item="innerItem" class="chip-wrap">
+                <image class="sub-icon" src="{{innerItem.hostLogo}}"></image>
+                <text>x {{innerItem.count}}</text>
+              </view> -->
+              <view class="chip-wrap">
+                <image class="sub-icon" src="{{item.fragments[0].hostLogo}}"></image>
+                <text>x {{item.fragments[0].count}}...</text>
+              </view>
+            </view>
+            <!-- <view class="sub-name">{{item.shopName}}</view> -->
+            <view class="price-wrap">
+              <text class="red">￥{{item.productSourcePrice}}</text>
+              <!-- <text class="grey">￥{{item.productSourcePrice}}</text> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <base-no-list wx:else title="暂无相关商品" redirect="{{false}}"></base-no-list>
+    </view>
+  </view>
+</view>

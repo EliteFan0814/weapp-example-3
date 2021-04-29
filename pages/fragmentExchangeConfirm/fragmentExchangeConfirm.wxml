@@ -1,0 +1,49 @@
+<!-- pages/confirmOrder/confirmOrder.wxml -->
+<view class="container">
+  <base-header showLeft navOpacity="{{1}}" title="确认订单"></base-header>
+  <view class="confirm-order">
+    <!-- 展示配送方式的地址选择 -->
+    <view class="address-wrap frame">
+      <view bind:tap="openAddress" class="address flex">
+        <view class="left flex">
+          <image src="/static/img/order/address.png" class="icon-img"></image>
+          <view wx:if="{{addressId}}" class="text flex-dc">
+            <view class="link">{{address.contact}} {{address.mobile}}</view>
+            <view class="address-text">{{address.area}} {{address.address}}</view>
+          </view>
+          <view wx:else class="text">选择收货选址</view>
+        </view>
+        <van-icon color="#999999" name="arrow" />
+      </view>
+    </view>
+
+    <!-- 积分兑换产品信息 -->
+    <view class="goods-wrap frame">
+      <view class="item-content flex">
+        <image src="{{goodInfo.hostProductThumb}}" mode="aspectFill" class="good-img"></image>
+        <view class="right-info ">
+          {{goodInfo.productName}}
+        </view>
+      </view>
+    </view>
+
+    <view class="price-fragment frame">
+      <view>所需碎片：</view>
+      <view
+        bind:tap="handleSelect"
+        data-info="{{item}}"
+        wx:for="{{chipList}}"
+        wx:key="id"
+        class="fragment-item active-item"
+      >
+        <image src="{{item.hostLogo}}" mode="widthFix" /> x {{item.count}}
+      </view>
+    </view>
+
+    <!-- 支付按钮 -->
+    <view class="btm-h"></view>
+    <view class="btm-btn">
+      <base-btn btn-style="btn-style" btnName="立即兑换" isPushing="{{isPushing}}" bind:btnTap="exchange"></base-btn>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+.container {
+  background-color: #fff;
+}
+
+.container .top-wrap {
+  position: relative;
+}
+
+.container .top-wrap image {
+  width: 100%;
+}
+
+.container .top-wrap .integral-wrap {
+  position: absolute;
+  bottom: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 100rpx;
+  text-align: center;
+  color: #ffffff;
+}
+
+.container .top-wrap .integral-wrap .top .num {
+  font-size: 83.33rpx;
+  letter-spacing: 0rpx;
+}
+
+.container .top-wrap .integral-wrap .top .name {
+  font-size: 28rpx;
+}
+
+.container .top-wrap .integral-wrap .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .top-wrap .integral-wrap .bottom .bottom-item {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  letter-spacing: 0rpx;
+  color: #ffffff;
+}
+
+.container .top-wrap .integral-wrap .bottom .bottom-item image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+}
+
+.container .btn-wrap {
+  background-color: #fff;
+  padding: 30rpx;
+}

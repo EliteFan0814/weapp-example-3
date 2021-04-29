@@ -1,0 +1,17 @@
+<!-- pages/noticeList/noticeList.wxml -->
+<view class="container">
+  <base-header title="平台公告"></base-header>
+  <view wx:if="{{noticeList.length}}" class="list-wrap frame">
+    <view class="list-item flex" wx:for="{{noticeList}}" wx:key="id" bindtap="open" data-id="{{item.id}}" data-title="{{item.title}}">
+      <view class="left flex">
+        <image src="{{item.thumbHost}}"></image>
+        <view class="text">
+          <view class="name omit-1">{{item.title}}</view>
+          <view class="time">{{item.createDate}}</view>
+        </view>
+      </view>
+      <van-icon color="#999999" name="arrow" />
+    </view>
+  </view>
+  <base-no-list wx:else title="暂无公告" redirect="{{false}}"></base-no-list>
+</view>

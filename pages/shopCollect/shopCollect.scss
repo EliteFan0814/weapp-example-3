@@ -1,0 +1,65 @@
+.container {
+  background-color: #f5f5f5;
+  .merchant-list-wrap {
+    margin-top: 20rpx;
+    .merchant-item {
+      padding: 20rpx 30rpx;
+      background-color: #ffffff;
+      box-shadow: 0rpx 5rpx 45rpx 0rpx rgba(0, 0, 0, 0.05);
+      border-radius: 20rpx;
+      margin-bottom: 20rpx;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20rpx;
+        .left-wrap {
+          display: flex;
+          align-items: center;
+          .logo {
+            width: 80rpx;
+            height: 80rpx;
+            margin-right: 20rpx;
+          }
+          .top-name-wrap {
+            .name {
+              font-size: 30rpx;
+              line-height: 40rpx;
+              letter-spacing: 0rpx;
+              color: #333333;
+            }
+            .distance {
+              font-size: 20rpx;
+              line-height: 40rpx;
+              letter-spacing: 0rpx;
+              color: #bbbbbb;
+            }
+          }
+        }
+        .collect {
+          width: 32rpx;
+          height: 29rpx;
+        }
+      }
+      .middle {
+        font-size: 24rpx;
+        line-height: 40rpx;
+        margin-bottom: 20rpx;
+        justify-content: space-between;
+        .slogan {
+          color: #333333;
+        }
+        .comein {
+          color: #0ccd79;
+        }
+      }
+      .bottom {
+        justify-content: space-between;
+        .active-img {
+          width: 120rpx;
+          height: 120rpx;
+        }
+      }
+    }
+  }
+}

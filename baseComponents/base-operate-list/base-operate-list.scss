@@ -1,0 +1,40 @@
+.base-operate-list {
+  border-radius: 15rpx;
+  background-color: #fff;
+  padding: 15rpx 30rpx;
+  .operate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom: 1px solid #eeeeee;
+    &:last-child {
+      border-bottom: none;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      .icon-img {
+        width: 30rpx;
+        height: 30rpx;
+        display: inline-block;
+      }
+      .item-name {
+        font-size: 26rpx;
+        letter-spacing: 0rpx;
+        color: #000000;
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      .other-info {
+      }
+      .right-img {
+        width: 30rpx;
+        height: 30rpx;
+        display: inline-block;
+      }
+    }
+  }
+}

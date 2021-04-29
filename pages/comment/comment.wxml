@@ -1,0 +1,22 @@
+<!-- 订单评价 -->
+<view class="contail">
+  <view class="box">
+    <view class="content">
+      <image src="{{order_item.picurl}}" />
+      <view class="content_left">
+        <view>{{order_item.goods_name}}</view>
+        <view>{{order_item.spec_name}}</view>
+      </view>
+    </view>
+    <!-- 输入 -->
+    <view class="content_enter">
+      <textarea bindblur="bindTextAreaBlur" bindinput="setInputval" value="{{content}}" data-name="content" placeholder="商品满足您的期待吗？请在这里进行描述，帮助其他想购买的人吧~" placeholder-style="font-size:30rpx" />
+    </view>
+    <!-- 上传图片 -->
+    <view class="content_bottom">
+      <view class="title">上传图片</view>
+      <van-uploader max-count="6" preview-size="180rpx" bind:delete="delImg" file-list="{{ fileList }}" bind:after-read="afterRead" />
+    </view>
+  </view>
+  <van-button round bind:click="submit" color="#00D71B">提交评价</van-button>
+</view>

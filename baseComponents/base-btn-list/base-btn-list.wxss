@@ -1,0 +1,30 @@
+.base-btn-list {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.base-btn-list::-webkit-scrollbar {
+  display: none;
+}
+
+.base-btn-list .btn-item {
+  flex-shrink: 0;
+  display: inline-block;
+  background-color: #eeeeee;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+  padding: 10rpx 60rpx;
+  transition: all 0.3s;
+  margin-right: 30rpx;
+}
+
+.base-btn-list .active-item {
+  color: #ffffff;
+  background-color: #0ccd79;
+  box-shadow: 0rpx 6rpx 43rpx 0rpx rgba(4, 130, 75, 0.2);
+}

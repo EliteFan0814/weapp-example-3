@@ -1,0 +1,17 @@
+<!--pages/allProfit/allProfit.wxml-->
+<view class="container">
+  <view class="list" wx:if="{{list.length}}">
+    <view class="list-item flex" wx:for="{{list}}" wx:key="index">
+      <view class="flex">
+        <image src="{{item.hostLogo}}" class="icon" />
+        <view>
+          <view class="remark">{{item.wayStr}}</view>
+          <view class="time">{{item.createDate}}</view>
+        </view>
+      </view>
+      <view class="money {{item.isIncome?'danger':'success'}}">{{item.isIncome?'+':'-'}}{{item.count}}</view>
+    </view>
+  </view>
+
+  <base-no-list wx:else title="暂无入账" topDistance="100" redirect="{{false}}"></base-no-list>
+</view>

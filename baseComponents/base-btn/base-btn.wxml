@@ -1,0 +1,15 @@
+<!-- 非禁用状态 -->
+<view wx:if="{{!disabled}}" class="base-btn-wrap btn-style {{isPushing?'is-pushing':''}}" bind:tap="handleTap">
+  <block wx:if="{{!isPushing}}">
+    <view class="text-wrap">{{btnName}}</view>
+  </block>
+  <block wx:else>
+    <view class="img-wrap" style="width:{{isPushing?btnWidth:''}}px;height:{{isPushing?btnHeight:''}}px">
+      <image src="./loading.svg" class="loading" style="width:{{isPushing?btnWidth:''}}px;height:{{isPushing?btnHeight:''}}px"></image>
+    </view>
+  </block>
+</view>
+<!-- 禁用状态 -->
+<view wx:else class="base-btn-wrap btn-style is-pushing">
+  <text class="text-wrap">{{btnName}}</text>
+</view>

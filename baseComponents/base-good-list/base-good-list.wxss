@@ -1,0 +1,94 @@
+.base-good-list-wrap .good-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.base-good-list-wrap .good-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.base-good-list-wrap .good-item .top {
+  display: flex;
+}
+
+.base-good-list-wrap .good-item .top .left .good-img {
+  display: block;
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+}
+
+.base-good-list-wrap .good-item .top .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-title {
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item {
+  display: flex;
+  align-items: center;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item .chunk-img {
+  margin-right: 10rpx;
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item .number {
+  font-size: 24rpx;
+}
+
+.base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .link {
+  font-size: 20.36rpx;
+  color: #ff3f3f;
+  text-decoration: underline;
+}
+
+.base-good-list-wrap .good-item .top .right .operate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.base-good-list-wrap .good-item .top .right .operate .time {
+  color: #0ccd79;
+  font-size: 24rpx;
+}
+
+.base-good-list-wrap .good-item .more-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f4f4f4;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  font-size: 24rpx;
+  letter-spacing: 0rpx;
+  color: #a6a6a6;
+}

@@ -1,0 +1,18 @@
+.base-search-wrap .flex-cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.base-search-wrap .search {
+  background-color: #f3f3f3;
+  border-radius: 30rpx;
+  color: #666666;
+  padding: 15rpx 0;
+}
+
+.base-search-wrap .search .search-img {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 12rpx;
+}

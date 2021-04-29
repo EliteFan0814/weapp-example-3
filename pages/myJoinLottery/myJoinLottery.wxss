@@ -1,0 +1,128 @@
+/* pages/order/order.wxss */
+.container {
+  background-color: #f5f5f5;
+}
+
+.container .van-tabs__line {
+  background-color: #0ccd79;
+}
+
+
+.container .scroll {
+  /* height: calc(100vh - 246rpx); */
+}
+
+.container .goods-list-wrap {
+  padding-bottom: 20rpx;
+  /* padding: 20rpx 30rpx 25rpx; */
+  margin-top: 25rpx;
+
+}
+
+.container .goods-list-wrap .good-item-style {
+  padding: 20rpx;
+  box-shadow: 0rpx 5rpx 45rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top {
+  display: flex;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .left .good-img {
+  display: block;
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-title {
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap {
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item {
+  display: flex;
+  align-items: center;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item .chunk-img {
+  margin-right: 10rpx;
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .chunk-item .number {
+  font-size: 24rpx;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .top-info-wrap .good-subtitle .chunk-wrap .link {
+  font-size: 20.36rpx;
+  color: #ff3f3f;
+  text-decoration: underline;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .info {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .operate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .top .right .operate .time {
+  color: #0ccd79;
+  font-size: 24rpx;
+}
+
+.container .goods-list-wrap .base-good-list-wrap .good-item .more-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f4f4f4;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  font-size: 24rpx;
+  letter-spacing: 0rpx;
+  color: #a6a6a6;
+}

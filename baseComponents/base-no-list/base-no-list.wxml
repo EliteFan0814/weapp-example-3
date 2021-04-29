@@ -1,0 +1,7 @@
+<view class="base-no-list-wrap" style="padding-top:{{topDistance}}rpx;font-size:{{fontSize}}rpx">
+  <image class="no-list-img" mode="widthFix" style="width:{{imgW}}rpx;" src="./noList.png" />
+  <view class="info-wrap">
+    <text class="info" style="color:{{titleColor}}">{{title}}</text>
+  </view>
+  <view wx:if="{{redirect}}" bind:tap="handleClick" class="more-btn">{{btnName}}</view>
+</view>

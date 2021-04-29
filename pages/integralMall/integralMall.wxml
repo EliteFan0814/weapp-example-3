@@ -1,0 +1,32 @@
+<view class="container">
+  <base-header title="积分商城" titleColor="{{titleColor}}" navOpacity="{{navOpacity}}" useHeight="{{false}}"></base-header>
+  <view class="other-wrap">
+    <view class="top-wrap" style="height:{{userInfoHeight}}px">
+      <image src="/static/img/icon/bg.png" style="height:{{userInfoHeight}}px"></image>
+      <view class="integral-wrap">
+        <view class="top">
+          <view class="num">{{userInfo.accountInfo.intergral}}</view>
+          <view class="name">积分</view>
+        </view>
+        <view class="bottom">
+          <view class="bottom-item" bindtap="open" data-url="integralBill">
+            <image src="/static/img/icon/bill.png"></image>
+            <text>积分账单</text>
+          </view>
+          <view class="bottom-item" bindtap="open" data-url="orderListIntegral">
+            <image src="/static/img/icon/order.png"></image>
+            <text>积分订单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="btn-wrap">
+      <base-btn-list btnList="{{btnList}}" bind:exchange="handleChange"></base-btn-list>
+    </view>
+  </view>
+  <view class="class-list-wrap">
+    <integral-class-list wx:if="{{activeBtnValue===1}}" classList="{{classList}}" residueHeight="{{residueHeight}}"></integral-class-list>
+    <integral-hotclass-list wx:else classList="{{classList}}" residueHeight="{{residueHeight}}"></integral-hotclass-list>
+  </view>
+</view>

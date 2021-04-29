@@ -1,0 +1,36 @@
+<!-- pages/merchant/merchant.wxml -->
+<view class="container">
+  <base-header title="店铺收藏">
+    <view class="search-wrap">
+      <van-search class="search" use-action-slot value="{{value}}" shape="round" bind:search="searchNewGood" bind:change="changeKeywords" bind:clear="clearKeywords" show-action placeholder="请输入搜索关键词">
+        <view slot="action" catch:tap="searchNewGood">搜索</view>
+      </van-search>
+    </view>
+  </base-header>
+  <view wx:if="{{collectList.length}}" class="merchant-list-wrap frame">
+    <view wx:for="{{collectList}}" wx:key="shopId" class="merchant-item">
+      <view class="top">
+        <view class="left-wrap">
+          <!-- <image src="https://dummyimage.com/80x80/000/fff" class="logo"></image> -->
+          <image src="{{item.shopThumbHost}}" class="logo"></image>
+          <view class="top-name-wrap">
+            <view class="name">{{item.shopName}}</view>
+            <view class="distance"></view>
+          </view>
+        </view>
+        <view bind:tap="collectShop" data-index="{{index}}" data-id="{{item.shopId}}" data-flag="{{item.isFavorites}}" class="right-wrap">
+          <image wx:if="{{item.isFavorites}}" class="collect" src="/static/img/icon/collect.png"></image>
+          <image wx:else class="collect" src="/static/img/icon/collect-black.png"></image>
+        </view>
+      </view>
+      <view class="middle flex">
+        <view class="slogan"></view>
+        <view bind:tap="openShop" data-id="{{item.shopId}}" class="comein">进入店铺</view>
+      </view>
+      <view class="bottom flex" >
+        <image class="active-img" wx:for="{{item.thumbs}}" wx:key="index" wx:for-item="child" src="{{child.thumbHost}}"></image>
+      </view>
+    </view>
+  </view>
+  <base-no-list wx:else title="暂无相关商家" redirect="{{false}}"></base-no-list>
+</view>

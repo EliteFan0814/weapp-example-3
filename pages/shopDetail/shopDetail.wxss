@@ -1,0 +1,82 @@
+.container {
+  background-color: #fff;
+}
+
+.container .top-wrap image {
+  width: 100%;
+}
+
+.container .info-wrap {
+  margin-top: -125rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .info-wrap .left {
+  display: flex;
+  align-items: center;
+}
+
+.container .info-wrap .left .img-wrap {
+  padding: 15rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 10rpx 15rpx 0rpx rgba(4, 0, 0, 0.1);
+  margin-right: 20rpx;
+}
+
+.container .info-wrap .left .img-wrap image {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.container .info-wrap .left .info {
+  font-size: 24rpx;
+  letter-spacing: 0rpx;
+  color: #ffffff;
+}
+
+.container .info-wrap .left .info .name-wrap .name {
+  font-size: 26rpx;
+  margin-right: 15rpx;
+  font-weight: bold;
+}
+
+.container .info-wrap .left .info .name-wrap .phone {
+  font-size: 24rpx;
+}
+
+.container .info-wrap .left .info .address {
+  font-size: 24rpx;
+}
+
+.container .info-wrap .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20rpx;
+  width: 70rpx;
+  flex-shrink: 0;
+}
+
+.container .info-wrap .right image {
+  width: 33rpx;
+  height: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.container .info-wrap .right text {
+  font-size: 22rpx;
+  letter-spacing: 0.4rpx;
+  color: #ffffff;
+}
+
+.container .btn-wrap {
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.container .class-list-wrap .notice-wrap {
+  padding: 15rpx;
+}

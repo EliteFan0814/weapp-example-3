@@ -1,0 +1,49 @@
+.container {
+  background-color: #fff;
+  .top-wrap {
+    position: relative;
+    image {
+      width: 100%;
+    }
+    .integral-wrap {
+      position: absolute;
+      bottom: 20rpx;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 100rpx;
+      // border: 1px solid red;
+      text-align: center;
+      color: #ffffff;
+      .top {
+        .num {
+          font-size: 83.33rpx;
+          letter-spacing: 0rpx;
+        }
+        .name {
+          font-size: 28rpx;
+        }
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .bottom-item {
+          display: flex;
+          align-items: center;
+          font-size: 30rpx;
+          letter-spacing: 0rpx;
+          color: #ffffff;
+          image {
+            width: 34rpx;
+            height: 34rpx;
+            margin-right: 10rpx;
+          }
+        }
+      }
+    }
+  }
+  .btn-wrap {
+    background-color: #fff;
+    padding: 30rpx;
+  }
+}

@@ -1,0 +1,107 @@
+<view class="container">
+  <view class="swiper-wrap">
+    <swiper
+      indicator-dots
+      autoplay
+      interval="{{3000}}"
+      duration="{{duration}}"
+    >
+      <block wx:for="{{info.hostProductPics}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image mode="aspectFill" src="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="product-main">
+    <view class="product-title">
+      {{info.productName}}
+    </view>
+    
+      <view class="price-fragment ">
+      <view>所需碎片：</view>
+      <view  wx:for="{{info.fragments}}" wx:key="id" class="fragment-item">
+        <image src="{{item.hostLogo}}" mode="widthFix" />
+        x {{item.count}}
+      </view>
+    </view>
+    <view class="product-price">
+      <view class="product-price--red">￥ {{info.productSourcePrice}}</view>
+    </view>
+    <view class="product-count">
+      <view></view>
+      <view>已兑换/库存：{{info.exchangeCount}}/{{info.lastCount}}</view>
+    </view>
+  </view>
+
+  <view class="promise flex">
+    <view class="left">
+      <text class="fold">服务</text>
+      <text>品质承诺，极速物流</text>
+    </view>
+  </view>
+
+  <view class="good-detail">
+    <rich-text nodes="{{info.productContent}}"></rich-text>
+  </view>
+
+  <view class="operation-h"></view>
+  <view class="operation-wrap " bind:tap="handleClose">
+    立即兑换
+  </view>
+
+  <!-- 弹框购买 -->
+  <van-popup
+    bind:close="handleClose"
+    show="{{ showDialog }}"
+    closeable
+    position="bottom"
+    custom-style="border-radius:30rpx 30rpx 0 0;"
+  >
+    <view class="detail-wrap">
+      <view class="good-wrap flex">
+        <image class="spec-img" src="{{info.hostProductThumb}}"></image>
+        <view class="right-text">
+          <view class="name">{{info.productName}}</view>
+          <!-- <view class="price">
+            <text class="product-price--red">{{info.intergral}}积分</text>
+          </view> -->
+        </view>
+      </view>
+      
+      <view class="buy-num flex">
+        <text>兑换数量：</text>
+        <van-stepper
+          wx:if="{{selectedSpec.buyLimit}}"
+          bind:change="handleBuyNum"
+          value="{{ selectedNumber }}"
+          max="{{selectedSpec.buyLimit}}"
+          input-width="40px"
+          button-size="32px"
+        />
+        <van-stepper
+          wx:else
+          bind:change="handleBuyNum"
+          value="{{ selectedNumber }}"
+          input-width="40px"
+          button-size="32px"
+        />
+      </view>
+      <view class="btn-wrap flex">
+        <view
+          class="btn buy"
+          bind:tap="handleBuy"
+          data-num="{{selectedNumber}}"
+          data-prod="{{goodInfo}}"
+          data-spec="{{selectedSpec}}"
+          >立即兑换</view
+        >
+      </view>
+    </view>
+  </van-popup>
+
+  <base-auth id="auth" authType="{{authType}}" />
+</view>

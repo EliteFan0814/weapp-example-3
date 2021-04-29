@@ -1,0 +1,118 @@
+/* pages/order/orderevaluate.wxss */
+.contail {
+  width: 100%;
+  overflow: hidden;
+}
+.contail button:not([size='mini']) {
+  width: 480rpx;
+  height: 78rpx;
+  margin-top: 20rpx;
+  background-color: #0ccd79;
+  border-radius: 39rpx;
+  color: white;
+  left: 135rpx;
+  font-size: 30rpx;
+}
+/* 上传图片 */
+.imageupload{
+  width: 130rpx;
+  height: 130rpx;
+  border: solid 1rpx #e6e6e6;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageupload>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.iconposi{
+  position: relative;
+}
+.imgdelete{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 6rpx;
+  top: -13rpx;
+  color: #969799;
+  z-index: 10;
+}
+
+.show-image{
+  width: 130rpx;
+  height: 130rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+.imageList{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.box {
+  width: 670rpx;
+  background-color: #ffffff;
+  box-shadow: 0 6rpx 44rpx 0 rgba(8, 1, 3, 0.06);
+  border-radius: 16rpx;
+  margin: 40rpx auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.content {
+  display: flex;
+  margin: 30rpx 30rpx;
+  justify-content: space-between;
+}
+.content image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+}
+.content_left {
+  color: #cccccc;
+  width: 444rpx;
+}
+.content_left view {
+  font-size: 30rpx;
+  width: 444rpx;
+  font-size: 30rpx;
+  letter-spacing: 0rpx;
+  color: #999999;
+}
+.content_left view:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.content_left view:last-child {
+  font-size: 26rpx;
+  margin-top: 24rpx;
+  width: 444rpx;
+}
+/* 描述 */
+.content_enter textarea{
+  font-size: 30rpx;
+}
+textarea {
+  width: 610rpx;
+  height: 300rpx;
+  background-color: #f9f9f9;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  padding: 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+/* 上传 */
+.content_bottom {
+  width: 610rpx;
+  margin: 30rpx auto 0;
+}
+.content_bottom .title {
+  margin-bottom: 30rpx;
+}

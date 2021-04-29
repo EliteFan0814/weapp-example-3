@@ -1,0 +1,37 @@
+/* baseComponents/base-notice-list/base-notice-list.wxss */
+.base-notice-list-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  .notice-img {
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .swiper-wrap {
+    padding: 0 10rpx;
+    flex-grow: 1;
+    .swiper {
+      height: 36rpx;
+      .notice-item {
+        font-size: 26rpx;
+        line-height: 36rpx;
+      }
+      .omit-1 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+  .right {
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    .more-img {
+      margin-left: 5rpx;
+      width: 18rpx;
+      height: 18rpx;
+    }
+  }
+}

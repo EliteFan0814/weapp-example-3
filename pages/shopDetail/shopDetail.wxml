@@ -1,0 +1,46 @@
+<view class="container">
+  <base-header title="{{shopInfo.name}}" titleColor="{{titleColor}}" navOpacity="{{navOpacity}}" useHeight="{{false}}"></base-header>
+  <view class="other-wrap">
+    <view class="top-wrap" style="height:{{userInfoHeight}}px">
+      <image src="/static/img/chipLottery/bg.png" style="height:{{userInfoHeight}}px"></image>
+    </view>
+    <!-- 信息 -->
+    <view class="info-wrap frame">
+      <view class="left">
+        <view class="img-wrap">
+          <image src="{{shopInfo.photoHost}}"></image>
+        </view>
+        <view class="info">
+          <view class="name-wrap">
+            <text class="name">{{shopInfo.name}}</text>
+            <text class="phone">{{shopInfo.servicePhone}}</text>
+          </view>
+          <view class="address omit-2">{{shopInfo.address}}</view>
+        </view>
+      </view>
+      <view class="right" bind:tap="collect">
+        <image wx:if="{{isFavorites}}" src="/static/img/icon/collect-all-white.png"></image>
+        <image wx:else src="/static/img/icon/collect-white.png"></image>
+        <text>{{isFavorites?'已收藏':'收藏'}}</text>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="btn-wrap">
+      <base-btn-list btnList="{{btnList}}" bind:exchange="changeType"></base-btn-list>
+    </view>
+  </view>
+  <view class="class-list-wrap" wx:if="{{tabType=='class'}}">
+    <shopDetail-class-list classList="{{classList}}" residueHeight="{{residueHeight}}" shopId="{{shopId}}"></shopDetail-class-list>
+  </view>
+  <view class="class-list-wrap" wx:if="{{tabType=='cheap'}}">
+    <shopDetail-cheap-list residueHeight="{{residueHeight}}" shopId="{{shopId}}" id="cheap"></shopDetail-cheap-list>
+  </view>
+  <view class="class-list-wrap" wx:if="{{tabType=='notice'}}">
+    <view class="notice-wrap">{{shopInfo.notice}}</view>
+    <!-- <shopDetail-notice
+      residueHeight="{{residueHeight}}"
+      shopId="{{shopId}}"
+      id="cheap"
+    ></shopDetail-notice> -->
+  </view>
+</view>

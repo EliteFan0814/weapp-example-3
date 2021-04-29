@@ -1,0 +1,48 @@
+<!-- pages/order/order.wxml -->
+<view class="container">
+  <base-header title="碎片订单">
+    <view class="tabs-wrap">
+      <van-tabs wx:if="{{showTabList}}" active="{{ active }}" bind:click="onChange">
+        <van-tab wx:for="{{tabList}}" wx:key="*this" title="{{item.name}}" name="{{item.value}}"></van-tab>
+      </van-tabs>
+    </view>
+  </base-header>
+  <scroll-view scroll-y scroll-top="{{scrollTop}}" class="scroll" bindscrolltolower="loadMore">
+    <view class="order-list frame" wx:if="{{list.length}}">
+      <view class="order-item" wx:for="{{list}}" wx:key="id">
+        <view class="title flex" catchtap="open" data-url="fragmentOrderDetail" data-id="{{item.id}}">
+          <view>
+            <text>订单号：{{item.id}}</text>
+          </view>
+          <text class="red ">{{item.statusStr}}</text>
+        </view>
+        <view class="info" catchtap="open" data-url="fragmentOrderDetail" data-id="{{item.id}}">
+          <view class="goods-list">
+            <view class="goods-item flex">
+              <image src="{{item.hostProductThumb}}" class="good-img"></image>
+              <view class="right-info flex-dc">
+                <view class="name omit-2">{{item.productName}}</view>
+                <view class="price flex">
+                  <view></view>
+                  <text class="number">x {{item.count}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="more-btn flex" catchtap="openClick" data-index="{{index}}" data-item="{{item}}">
+            <text>共1件商品</text>
+            <!-- ><view  wx:if="{{item.count>1}}">
+              <image src="../../static/img/order/down.png" wx:if="{{!item.isOpen}}"   mode="widthFix" class="icon"/>
+              <image src="../../static/img/order/up.png" wx:else  mode="widthFix" class="icon" />
+            </view>  <! -->
+          </view>
+          
+          <view class="btn-wrap flex" wx:if="{{item.status == 10}}">
+            <base-btn btn-name="确认收货" btn-style="base-style"  catch:tap="confirm" data-id="{{item.id}}" ></base-btn>
+          </view>
+        </view>
+      </view>
+    </view>
+    <base-no-list wx:else title="暂无订单" redirect="{{false}}" />
+  </scroll-view>
+</view>

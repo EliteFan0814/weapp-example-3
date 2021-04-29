@@ -1,0 +1,31 @@
+<view class="base-class-list" style="height:calc(100vh - {{residueHeight}}px)">
+  <!-- 左侧分类 -->
+  <view class="aside-wrap {{hideScrollBar?'hide-scroll-bar':''}}">
+    <view bind:tap="handleClick" data-index="{{index}}" data-id="{{item.value}}" wx:for="{{classList}}" wx:key="id" class="class-item {{index === activeItemIndex?'active-item':''}}">
+      <view class="item omit-1 ">{{item.text}}</view>
+    </view>
+  </view>
+  <!-- 右侧内容 -->
+  <view class="content-wrap">
+    <scroll-view scroll-y="{{true}}" style="height:calc(100vh - {{residueHeight}}px)" bindscrolltolower="scrollLowerGetList" class="scroll-view">
+      <view wx:for="{{10}}" wx:key="index" class="normal-good-item">
+        <view class="img-wrap">
+          <image mode="aspectFill" src="https://dummyimage.com/258x220/000/fff" class="item-img"></image>
+        </view>
+        <view class="name-wrap">
+          <view class="name omit-2">进口餐饮甜糯玉进糯玉进口糯玉进口口餐饮甜糯玉</view>
+          <view class="sub-name">
+            <text>购买可获取</text>
+            <image class="sub-icon" src="/static/img/index/crown.png"></image>
+            <text>碎片</text>
+          </view>
+          <view class="price-wrap">
+            <text class="red">￥16.28</text>
+            <text class="grey">￥82.22</text>
+          </view>
+        </view>
+      </view>
+      <base-no-list></base-no-list>
+    </scroll-view>
+  </view>
+</view>

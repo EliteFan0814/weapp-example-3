@@ -1,0 +1,30 @@
+.base-order-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22rpx;
+  letter-spacing: 0rpx;
+  color: #333333;
+}
+
+.base-order-btns .btn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base-order-btns .btn-item .item-img {
+  display: block;
+  width: 35rpx;
+  height: 32rpx;
+  margin-bottom: 5rpx;
+}
+
+.base-order-btns .last-btn {
+  padding-left: 40rpx;
+  border-left: 1px solid #999999;
+}
+
+.base-order-btns .last-btn .all {
+  width: 48rpx;
+}

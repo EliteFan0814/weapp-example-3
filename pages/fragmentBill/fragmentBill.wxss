@@ -1,0 +1,77 @@
+/* pages/fragmentBill/fragmentBill.wxss */
+.container .list {
+  margin-top: 8rpx;
+}
+
+.container .list-item {
+  justify-content: space-between;
+  padding: 18rpx 40rpx;
+  flex-wrap: wrap;
+}
+.container .list-item>.flex{
+  justify-content: space-between;
+}
+.container .list-item .text{
+  font-size: 26rpx;
+  color: #333;
+}
+.container .list-item .remark{
+  color: #999;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+
+.container .list-item .time{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+  width: 100%;
+}
+.container .list-item:nth-child(n + 2) {
+  margin-top: 15rpx;
+}
+
+.container .list-item:nth-child(Even) {
+  background: #f6f6f6;
+}
+
+.container .list-item .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+
+.container .list-item .id {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.container .list-item .money {
+  font-size: 34rpx;
+  text-align: right;
+}
+.success{
+  color: #0ccd79;
+}
+.danger{
+  color: #F56C6C;
+}
+.container .list-item .remark {
+  font-size: 24rpx;
+  color: #999;
+}
+.container .list-item .time {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: right;
+}
+
+.container .list-item .left {
+  font-size: 30rpx;
+  color: #0ccd79;
+}
+
+.container .list-item .right {
+  font-size: 28rpx;
+  color: #333333;
+}

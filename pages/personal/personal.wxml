@@ -1,0 +1,34 @@
+<!-- pages/personal/personal.wxml -->
+<view class="container">
+  <base-header title="个人中心" titleColor="{{titleColor}}" navOpacity="{{navOpacity}}" useHeight="{{false}}" showLeft="{{false}}"></base-header>
+  <!-- 个人信息 -->
+  <view class="user-info" style="height:{{userInfoHeight}}px">
+    <image src="/static/img/personal/bg.png" style="height:{{userInfoHeight}}px" class="bg-img"></image>
+    <view class="info-wrap">
+      <base-personal-info userInfo="{{userInfo}}" isBindWx="{{isBindWx}}" isBindWxPhone="{{isBindWxPhone}}" useSetting="{{false}}" bind:bindWxInfo="bindWxInfo" bind:bindWxPhone="bindWxPhone"></base-personal-info>
+    </view>
+  </view> 
+  <!-- 我的订单 -->
+  <view class="order-list-wrap frame">
+    <base-order-btns></base-order-btns>
+  </view>
+  <!-- 我的碎片 -->
+  <view class="chip-wrap frame" wx:if="{{fragment.length}}">
+    <my-chip rightText="查看全部" fragment="{{fragment}}" bind:btnTap="openExchange"></my-chip>
+  </view>
+  <!-- 兑换 抽奖 -->
+  <view class="exchange-wrap frame flex">
+    <view bind:tap="openIntegralMall" class="exchange-item">
+      <image src="/static/img/personal/left.png" class="bg-img"></image>
+      <text class="name">积分兑换商城</text>
+    </view>
+    <view bind:tap="openLottery" class="exchange-item">
+      <image src="/static/img/personal/right.png" class="bg-img"></image>
+      <text class="name">抽奖专区</text>
+    </view>
+  </view>
+  <!-- 操作列表 -->
+  <view class="operate-list-wrap frame">
+    <base-operate-list useIcon="{{false}}" operateList="{{operateList}}"></base-operate-list>
+  </view>
+</view>

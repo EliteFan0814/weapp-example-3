@@ -1,0 +1,27 @@
+.base-no-list-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.base-no-list-wrap .no-list-img {
+  margin-bottom: 10rpx;
+}
+
+.base-no-list-wrap .info-wrap {
+  color: #999999;
+  margin-bottom: 30rpx;
+}
+
+.base-no-list-wrap .info-wrap .info {
+  line-height: 48rpx;
+  letter-spacing: 0rpx;
+}
+
+.base-no-list-wrap .more-btn {
+  color: #accbfa;
+  border: 1px solid #accbfa;
+  border-radius: 10rpx;
+  padding: 5rpx 10rpx;
+}
